@@ -1,2 +1,2 @@
-# SQL-ijection
+# SQL-injection
 
