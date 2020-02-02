@@ -14,7 +14,7 @@ class simpleSQLinjectionDetect
 							'log' 	 => true,
 							'unset'  => true,
 							'exit'   => true,
-							'errMsg' => 'Not allowed',
+							'errMsg' => 'bursted!!!! 😠😠',
 						);
 	
 	public function detect()
@@ -93,8 +93,8 @@ class simpleSQLinjectionDetect
 	{
 		$data  = date('d-m-Y H:i:s') . ' - ';
 		$data .= $_SERVER['REMOTE_ADDR'] . ' - ';
-		$data .= 'Suspect: ['.$this->_suspect.'] ';
-		$data .= json_encode($_SERVER);
+		// $data .= 'Suspect: ['.$this->_suspect.'] ';
+		// $data .= json_encode($_SERVER);
 		@file_put_contents('./logs/sql.injection.txt', $data . PHP_EOL, FILE_APPEND);
 	}
 }

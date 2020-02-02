@@ -11,25 +11,26 @@ if ($mysqli->connect_error) {
     die('Connection Error');
 }
 
- $_POST['email'];
- $_POST['password'];
+ $cemail = $_POST['email'];
+ $cpassword = $_POST['password'];
 
 // validating inputs for malicious request again 
 $formInput = $_POST['email'];
-$formReq = " ' or '1' = '1 ";
-$formReq .= "'; DROP TABLE important; SELECT * FROM 'users' where '1' = '1
-";
+$formReq = "or '1' = '1";
+// $formReq .= "'; DROP TABLE important; SELECT * FROM 'users' where '1' = '1
+// ";
 $checkam = strpos($formInput, $formInput);
 
 if ($checkam === false) {
      echo "The input '$formReq' was flagged malicious!";
      $data  = "\n Date_time: " .date('d-m-Y H:i:s') ;
         $data .= ' IP: '.$_SERVER['REMOTE_ADDR'] ;
-        $data .= ' key log: '.$email .' '. $password ."\n";
+        $data .= ' key log: '.$cemail .' '. $cpassword ."\n";
         // $data .= 'Suspect: ['.$this->_suspect.'] ';
         // $data .= json_encode($_SERVER);
         file_put_contents('logs/systemlogs.txt', $data
-            .'================== © https://samuelolubayo.website ==================', FILE_APPEND);
+            .'================== © Ibilola Taiwo ==================', FILE_APPEND);
+        echo "bad guy.. busted!";
         
 }else{
 
